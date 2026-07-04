@@ -1,0 +1,628 @@
+:root {
+  color-scheme: dark;
+  --bg: #04050e;
+  --bg-soft: #0b0a18;
+  --panel: rgba(16, 14, 31, 0.82);
+  --panel-strong: rgba(23, 18, 40, 0.94);
+  --line: rgba(246, 213, 154, 0.24);
+  --line-strong: rgba(246, 213, 154, 0.54);
+  --gold: #f4d28b;
+  --gold-strong: #ffd98a;
+  --ivory: #fff4dc;
+  --muted: #c7b7d7;
+  --violet: #9e78ff;
+  --cyan: #8ee8ff;
+  --rose: #f5a6c8;
+  --shadow: rgba(0, 0, 0, 0.48);
+  --max: 1160px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    radial-gradient(circle at 82% 8%, rgba(137, 95, 255, 0.2), transparent 30rem),
+    radial-gradient(circle at 12% 28%, rgba(142, 232, 255, 0.11), transparent 24rem),
+    linear-gradient(180deg, #03040b 0%, var(--bg) 48%, #070612 100%);
+  color: var(--ivory);
+  font-family:
+    ui-serif,
+    "Songti SC",
+    "Noto Serif CJK SC",
+    "Source Han Serif SC",
+    Georgia,
+    serif;
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  content: "";
+  background-image:
+    radial-gradient(circle, rgba(255, 236, 189, 0.64) 0 1px, transparent 1px),
+    radial-gradient(circle, rgba(143, 116, 255, 0.58) 0 1px, transparent 1px);
+  background-position:
+    0 0,
+    2.2rem 3.1rem;
+  background-size:
+    6.4rem 6.4rem,
+    8.2rem 8.2rem;
+  opacity: 0.34;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1rem max(1.25rem, calc((100% - var(--max)) / 2));
+  border-bottom: 1px solid rgba(246, 213, 154, 0.12);
+  background: rgba(4, 5, 14, 0.72);
+  backdrop-filter: blur(18px);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.brand-mark {
+  display: grid;
+  width: 2.25rem;
+  height: 2.25rem;
+  place-items: center;
+  border: 1px solid var(--line-strong);
+  color: var(--gold);
+}
+
+.brand strong {
+  display: block;
+  color: var(--gold);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1rem;
+  letter-spacing: 0.12rem;
+}
+
+.brand small {
+  display: block;
+  margin-top: 0.1rem;
+  color: rgba(255, 244, 220, 0.68);
+  font-family: Arial, "PingFang SC", sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: rgba(255, 244, 220, 0.78);
+  font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 0.92rem;
+}
+
+.site-nav a {
+  padding: 0.45rem 0.2rem;
+}
+
+.site-nav a:focus-visible,
+.site-nav a:hover {
+  color: var(--gold);
+}
+
+.hero-section {
+  position: relative;
+  overflow: hidden;
+  min-height: calc(100svh - 4.4rem);
+  padding: 5rem 1.25rem 4rem;
+}
+
+.hero-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(90deg, rgba(4, 5, 14, 0.98) 0%, rgba(4, 5, 14, 0.74) 42%, rgba(4, 5, 14, 0.38) 100%),
+    url("assets/noctara-poster.png") center right / cover no-repeat;
+  opacity: 0.7;
+  filter: saturate(1.08);
+}
+
+.hero-backdrop::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(180deg, rgba(4, 5, 14, 0) 58%, var(--bg) 100%);
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(22rem, 0.78fr);
+  gap: 3rem;
+  align-items: center;
+  width: min(100%, var(--max));
+  margin: 0 auto;
+}
+
+.hero-copy {
+  max-width: 40rem;
+}
+
+.eyebrow {
+  margin: 0 0 1rem;
+  color: var(--gold);
+  font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.16rem;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  overflow-wrap: anywhere;
+}
+
+h1 {
+  margin: 0;
+  color: var(--ivory);
+  font-size: 4.7rem;
+  font-weight: 600;
+  line-height: 1.05;
+  text-shadow: 0 0 2rem rgba(244, 210, 139, 0.24);
+}
+
+.hero-lead {
+  max-width: 34rem;
+  margin: 1.6rem 0 0;
+  color: rgba(255, 244, 220, 0.82);
+  font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.9;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 2.2rem;
+}
+
+.primary-action,
+.secondary-action,
+.submit-button,
+.copy-button {
+  display: inline-flex;
+  min-height: 3.1rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  cursor: pointer;
+  font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-weight: 700;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.primary-action,
+.submit-button {
+  padding: 0.9rem 1.6rem;
+  background: linear-gradient(180deg, #ffe4a9 0%, #d89e49 100%);
+  color: #27180a;
+  box-shadow: 0 0.85rem 2.2rem rgba(216, 158, 73, 0.26);
+}
+
+.secondary-action,
+.copy-button {
+  padding: 0.9rem 1.35rem;
+  border-color: var(--line-strong);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--ivory);
+}
+
+.primary-action:hover,
+.secondary-action:hover,
+.submit-button:hover,
+.copy-button:hover {
+  transform: translateY(-2px);
+}
+
+.primary-action:focus-visible,
+.secondary-action:focus-visible,
+.submit-button:focus-visible,
+.copy-button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+}
+
+.hero-meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+  max-width: 36rem;
+  margin: 2.2rem 0 0;
+  font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+.hero-meta div {
+  min-width: 0;
+  padding: 0.95rem;
+  border: 1px solid rgba(246, 213, 154, 0.18);
+  border-radius: 8px;
+  background: rgba(14, 11, 28, 0.56);
+}
+
+.hero-meta dt {
+  color: rgba(255, 244, 220, 0.56);
+  font-size: 0.78rem;
+}
+
+.hero-meta dd {
+  margin: 0.32rem 0 0;
+  color: var(--ivory);
+  font-size: 0.95rem;
+}
+
+.poster-frame {
+  position: relative;
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(10, 7, 21, 0.7);
+  box-shadow:
+    0 1.8rem 4.5rem var(--shadow),
+    0 0 3.5rem rgba(158, 120, 255, 0.2);
+}
+
+.poster-frame::before {
+  position: absolute;
+  inset: 0.75rem;
+  z-index: 1;
+  pointer-events: none;
+  border: 1px solid rgba(255, 217, 138, 0.16);
+  content: "";
+}
+
+.poster-frame img {
+  width: 100%;
+  max-height: 45rem;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.experience-section,
+.reservation-section {
+  padding: 5rem 1.25rem;
+}
+
+.section-heading,
+.reservation-layout {
+  width: min(100%, var(--max));
+  margin: 0 auto;
+}
+
+.section-heading {
+  max-width: 48rem;
+  text-align: center;
+}
+
+.section-heading h2,
+.reservation-copy h2 {
+  margin: 0;
+  color: var(--ivory);
+  font-size: 2.6rem;
+  line-height: 1.16;
+}
+
+.section-heading p,
+.reservation-copy p {
+  margin: 1rem auto 0;
+  color: rgba(255, 244, 220, 0.76);
+  font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 1rem;
+  line-height: 1.85;
+}
+
+.benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  width: min(100%, var(--max));
+  margin: 2.4rem auto 0;
+}
+
+.benefit-card {
+  min-height: 13rem;
+  padding: 1.35rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.018)),
+    rgba(12, 9, 25, 0.78);
+}
+
+.benefit-index {
+  color: var(--cyan);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.88rem;
+}
+
+.benefit-card h3 {
+  margin: 2.2rem 0 0;
+  color: var(--gold);
+  font-size: 1.35rem;
+}
+
+.benefit-card p {
+  margin: 0.85rem 0 0;
+  color: rgba(255, 244, 220, 0.72);
+  font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  line-height: 1.75;
+}
+
+.reservation-section {
+  background:
+    linear-gradient(180deg, rgba(4, 5, 14, 0) 0%, rgba(17, 12, 31, 0.86) 100%),
+    rgba(7, 6, 18, 0.66);
+}
+
+.reservation-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.86fr) minmax(20rem, 0.74fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.reservation-copy {
+  padding-top: 1rem;
+}
+
+.qr-panel {
+  display: grid;
+  grid-template-columns: 8.5rem minmax(0, 1fr);
+  gap: 1.2rem;
+  align-items: center;
+  max-width: 28rem;
+  margin-top: 2rem;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.qr-panel img {
+  width: 8.5rem;
+  height: 8.5rem;
+  border-radius: 8px;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.qr-panel strong,
+.qr-panel span {
+  display: block;
+}
+
+.qr-panel strong {
+  color: var(--gold);
+  font-size: 1.25rem;
+}
+
+.qr-panel span {
+  margin-top: 0.45rem;
+  color: rgba(255, 244, 220, 0.7);
+  font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+.reservation-form {
+  padding: 1.35rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel-strong);
+  box-shadow: 0 1.2rem 3rem rgba(0, 0, 0, 0.28);
+}
+
+.form-row {
+  display: grid;
+  gap: 0.48rem;
+  margin-bottom: 1rem;
+  font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+.form-row label,
+.result-panel label {
+  color: rgba(255, 244, 220, 0.82);
+  font-size: 0.92rem;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  border: 1px solid rgba(246, 213, 154, 0.24);
+  border-radius: 8px;
+  background: rgba(4, 5, 14, 0.72);
+  color: var(--ivory);
+}
+
+input,
+select {
+  min-height: 3rem;
+  padding: 0 0.9rem;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 6rem;
+  padding: 0.85rem 0.9rem;
+}
+
+::placeholder {
+  color: rgba(255, 244, 220, 0.38);
+}
+
+.submit-button {
+  width: 100%;
+  margin-top: 0.3rem;
+}
+
+.form-note {
+  margin: 0.95rem 0 0;
+  color: rgba(255, 244, 220, 0.52);
+  font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 0.82rem;
+  line-height: 1.65;
+}
+
+.result-panel {
+  display: grid;
+  gap: 0.7rem;
+  margin-top: 1.2rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(246, 213, 154, 0.18);
+  font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+.result-panel[hidden] {
+  display: none;
+}
+
+#reservationText {
+  min-height: 10rem;
+}
+
+.copy-button {
+  width: 100%;
+}
+
+.copy-status {
+  min-height: 1.2rem;
+  margin: 0;
+  color: var(--cyan);
+  font-size: 0.88rem;
+}
+
+.site-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem 1.5rem;
+  padding: 2rem 1.25rem;
+  border-top: 1px solid rgba(246, 213, 154, 0.12);
+  color: rgba(255, 244, 220, 0.55);
+  font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 0.86rem;
+}
+
+@media (max-width: 980px) {
+  .hero-section {
+    padding-top: 3.5rem;
+  }
+
+  .hero-content,
+  .reservation-layout {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  .poster-frame {
+    max-width: 34rem;
+  }
+
+  .benefit-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-header {
+    position: static;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .site-nav {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .hero-section {
+    min-height: auto;
+    padding-top: 2.4rem;
+  }
+
+  h1 {
+    font-size: 2.65rem;
+  }
+
+  .section-heading h2,
+  .reservation-copy h2 {
+    font-size: 2rem;
+  }
+
+  .hero-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .poster-frame img {
+    max-height: none;
+  }
+
+  .experience-section,
+  .reservation-section {
+    padding: 3.6rem 1rem;
+  }
+
+  .qr-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .qr-panel img {
+    width: 10rem;
+    height: 10rem;
+  }
+}
