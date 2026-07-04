@@ -43,7 +43,14 @@
               在梦境与现实之间，记录每一种情绪的形态。完成一次轻量测试，生成你的情绪卡，并与梦境守护者展开一次温柔对话。
             </p>
             <div class="hero-actions" aria-label="预约操作">
-              <a class="primary-action" href="#reservation">抢先预约内测</a>
+              <a
+                class="primary-action"
+                href="https://wj.qq.com/s2/27223263/cbba/"
+                target="_blank"
+                rel="noopener"
+              >
+                抢先预约内测
+              </a>
               <a class="secondary-action" href="#experience">查看体验内容</a>
             </div>
             <dl class="hero-meta" aria-label="Noctara 核心信息">
@@ -100,71 +107,39 @@
           <div class="reservation-copy">
             <p class="eyebrow">抢先体验邀约</p>
             <h2 id="reservation-title">预约 Noctara 内测资格</h2>
-            <p>
-              当前预约通道以扫码联系为准。你可以先填写一份预约信息，页面会生成可复制文本；扫码添加后，把预约信息发送给运营即可。
-            </p>
+            <p>当前预约通道已切换为腾讯问卷。你可以扫码填写，也可以点击右侧按钮直接打开问卷。</p>
 
-            <div class="qr-panel" aria-label="扫码预约">
+            <a
+              class="qr-panel"
+              href="https://wj.qq.com/s2/27223263/cbba/"
+              target="_blank"
+              rel="noopener"
+              aria-label="打开腾讯问卷预约"
+            >
               <img src="assets/noctara-qr.png" alt="Noctara 预约二维码" />
               <div>
-                <strong>扫码预约</strong>
+                <strong>扫码填写腾讯问卷</strong>
                 <span>开启你的梦境之旅</span>
               </div>
-            </div>
+            </a>
           </div>
 
-          <form class="reservation-form" id="reservationForm">
-            <div class="form-row">
-              <label for="nickname">昵称</label>
-              <input id="nickname" name="nickname" type="text" maxlength="24" placeholder="例如：小夜" />
-            </div>
-
-            <div class="form-row">
-              <label for="contact">微信号或手机号</label>
-              <input
-                id="contact"
-                name="contact"
-                type="text"
-                inputmode="text"
-                maxlength="40"
-                placeholder="用于发送内测通知"
-                required
-              />
-            </div>
-
-            <div class="form-row">
-              <label for="interest">最想体验</label>
-              <select id="interest" name="interest">
-                <option value="生成情绪卡牌">生成情绪卡牌</option>
-                <option value="与梦境守护者对话">与梦境守护者对话</option>
-                <option value="记录我的情绪星图">记录我的情绪星图</option>
-                <option value="都想试试">都想试试</option>
-              </select>
-            </div>
-
-            <div class="form-row">
-              <label for="message">想说的话</label>
-              <textarea
-                id="message"
-                name="message"
-                rows="4"
-                maxlength="120"
-                placeholder="可选：你期待 Noctara 帮你记录什么？"
-              ></textarea>
-            </div>
-
-            <button class="submit-button" type="submit">生成预约信息</button>
-            <p class="form-note">
-              这是一页纯静态预约页，表单不会自动上传到服务器。真实预约以扫码发送信息为准。
+          <aside class="survey-card" aria-label="腾讯问卷预约入口">
+            <span class="survey-tag">Tencent Questionnaire</span>
+            <h3>填写问卷，预约 Noctara 首批内测</h3>
+            <p>
+              问卷会收集你的联系方式、体验偏好和内测反馈意愿。提交后，Noctara 团队会根据内测节奏发送体验邀请。
             </p>
-
-            <div class="result-panel" id="resultPanel" hidden>
-              <label for="reservationText">预约信息</label>
-              <textarea id="reservationText" readonly rows="8"></textarea>
-              <button class="copy-button" type="button" id="copyButton">复制预约信息</button>
-              <p id="copyStatus" class="copy-status" role="status" aria-live="polite"></p>
-            </div>
-          </form>
+            <a
+              class="primary-action survey-link"
+              href="https://wj.qq.com/s2/27223263/cbba/"
+              target="_blank"
+              rel="noopener"
+            >
+              打开腾讯问卷
+            </a>
+            <p class="survey-url">https://wj.qq.com/s2/27223263/cbba/</p>
+          </aside>
         </div>
       </section>
     </main>
@@ -173,7 +148,5 @@
       <span>NOCTARA · Dream Observation Court</span>
       <span>每一种情绪，都值得被看见。</span>
     </footer>
-
-    <script src="script.js"></script>
   </body>
 </html>
